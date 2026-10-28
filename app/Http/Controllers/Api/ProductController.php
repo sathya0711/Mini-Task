@@ -10,6 +10,14 @@ use Illuminate\Http\JsonResponse;
 
 class ProductController extends Controller
 {
+
+    public function index()
+    {
+        return response()->json([
+            'data' => Product::orderBy('name')->get(),
+        ]);
+    }
+    
     public function lowStock(Request $request): JsonResponse
     {
         $validated = $request->validate([

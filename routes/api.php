@@ -11,3 +11,4 @@ Route::get('/user', function (Request $request) {
 Route::post('/orders', [OrderController::class, 'store']);
 Route::get('/customers/{email}/orders', [OrderController::class, 'customerOrders']);
 Route::get('/products/low-stock', [ProductController::class, 'lowStock']);
+Route::get('/products', [ProductController::class, 'index']);
